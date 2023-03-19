@@ -10,12 +10,12 @@ steps:
 - script: |
     git config --global user.email "usman59228@gmail.com"
     git config --global user.name "musman3"
-    git clone https://github.com/musman3/test-repo.git
+    git clone https://github.com/MadProgrammerHere/test-repo.git
     cd test-repo
     git branch
     # Modify files here
     touch file2.txt
     git add .
     git commit -m "Added file"
-    git push https://$(pat)@github.com/musman3/test-repo.git
+    git push https://$(pat)@github.com/MadProgrammerHere/test-repo.git
   displayName: 'Modify target repository'
