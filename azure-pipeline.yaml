@@ -2,22 +2,20 @@ trigger:
 - main
 
 pool:
-  name: Github-testing-pool
+  name: Self-Managed-Pool
 
 
 steps:
 - checkout: self
 - script: |
-    git config --global user.email "noumannow@gmail.com"
-    git config --global user.name "NoumanHere"
-    git clone https://github.com/NoumanHere/test-repo-2.git
-    cd test-repo-2
+    git config --global user.email "usman59228@gmail.com"
+    git config --global user.name "musman3"
+    git clone https://github.com/musman3/test-repo.git
+    cd test-repo
     git branch
     # Modify files here
     touch file2.txt
     git add .
     git commit -m "Added file"
-    git push https://$(pat)@github.com/NoumanHere/test-repo-2.git
-    # git remote set-url origin https://NoumanHere:$(pat)@github.com/NoumanHere/NoumanHere/test-repo-2.git
-    # git push origin master
+    git push https://$(pat)@github.com/musman3/test-repo.git
   displayName: 'Modify target repository'
