@@ -1,0 +1,23 @@
+trigger:
+- main
+
+pool:
+  name: Github-testing-pool
+
+
+steps:
+- checkout: self
+- script: |
+    git config --global user.email "noumannow@gmail.com"
+    git config --global user.name "NoumanHere"
+    git clone https://github.com/NoumanHere/test-repo-2.git
+    cd test-repo-2
+    git branch
+    # Modify files here
+    touch file2.txt
+    git add .
+    git commit -m "Added file"
+    git push https://$(pat)@github.com/NoumanHere/test-repo-2.git
+    # git remote set-url origin https://NoumanHere:$(pat)@github.com/NoumanHere/NoumanHere/test-repo-2.git
+    # git push origin master
+  displayName: 'Modify target repository'
