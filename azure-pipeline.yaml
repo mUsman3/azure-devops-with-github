@@ -16,7 +16,7 @@ steps:
       cd test-repo
       git branch
       # Modify files here
-      touch file2.txt
+      echo "usman is here" >> file2.txt 
       git add .
       git commit -m "Added file"
       git push https://$(pat)@github.com/MadProgrammerHere/test-repo.git
